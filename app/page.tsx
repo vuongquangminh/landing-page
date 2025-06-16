@@ -15,6 +15,11 @@ export default function Home() {
             Solid
           </Button>
         </div>
+        <div className="bg-banner-home h-[500px] w-full bg-cover bg-center">
+          <h1 className="text-black text-4xl font-bold">
+            Helping American Communities
+          </h1>
+        </div>
       </main>
     </div>
   );
