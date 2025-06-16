@@ -3,8 +3,8 @@ import { Button } from "antd";
 export default function Home() {
   return (
     <div className=" items-center justify-items-center min-h-screen pb-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col  sm:items-start">
-        <div className="bg-[url('/images/banner.webp')]">
+      <main className="flex flex-col w-full">
+        <div className="bg-[url('/images/banner.webp')] w-full text-white">
           <h2 className="text-6xl font-bold">Helping American Communitiesv</h2>
           <p>
             With the Atlantic hurricane season underway, NASA is gearing up to
