@@ -104,7 +104,7 @@ export const HeaderApp = () => {
     },
   ];
   return (
-    <header className="p-4 flex bg-black ">
+    <header className="p-4 flex bg-black flex-wrap">
       <div className="inline-flex">
         <Dropdown menu={{ items: explore }} trigger={["click"]}>
           <Button
@@ -130,7 +130,7 @@ export const HeaderApp = () => {
           priority
         />
       </div>
-      <div className="inline-flex">
+      <div className="inline-flex flex-wrap">
         <Dropdown menu={{ items: news }} trigger={["click"]}>
           <Button
             color="default"

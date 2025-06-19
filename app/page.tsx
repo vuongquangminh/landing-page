@@ -2,23 +2,35 @@ import { Button } from "antd";
 
 export default function Home() {
   return (
-    <div className=" items-center justify-items-center min-h-screen pb-20 font-[family-name:var(--font-geist-sans)]">
+    <div className="relative items-center justify-items-center min-h-screen pb-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col w-full">
-        <div className="bg-[url('/images/banner.webp')] w-full text-white">
-          <h2 className="text-6xl font-bold">Helping American Communitiesv</h2>
-          <p>
-            With the Atlantic hurricane season underway, NASA is gearing up to
-            produce cutting-edge research that strengthens the nation’s ability
-            to prepare for and respond to severe weather.
-          </p>
-          <Button color="danger" variant="solid">
-            Click!
-          </Button>
-        </div>
-        <div className="bg-banner-home h-[500px] w-full bg-cover bg-center">
-          <h1 className="text-black text-4xl font-bold">
-            Helping American Communities
-          </h1>
+        <div className="relative w-full aspect-[2/0.7] z-10">
+          <figure className="absolute inset-0 w-full h-full object-cover">
+            <video
+              className="object-cover w-full h-full"
+              autoPlay
+              loop
+              muted
+              playsInline
+              id="html5_media_bu69gubpgij"
+            >
+              <source
+                src="https://www.nasa.gov/wp-content/uploads/2025/05/iss-intro.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </figure>
+          <div className="relative z-10 p-8 text-white">
+            <h2 className="text-6xl font-bold">Helping American Communities</h2>
+            <p className="mt-4 max-w-xl">
+              With the Atlantic hurricane season underway, NASA is gearing up to
+              produce cutting-edge research that strengthens the nation’s
+              ability to prepare for and respond to severe weather.
+            </p>
+            <Button type="primary" danger className="mt-4">
+              Click!
+            </Button>
+          </div>
         </div>
       </main>
     </div>
