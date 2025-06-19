@@ -1,6 +1,33 @@
 import { Button } from "antd";
+import { ReactNode } from "react";
 
 export default function Home() {
+  const itemBanner: {
+    id: number;
+    title: string;
+    subtitle: string;
+    icon: ReactNode;
+  }[] = [
+    {
+      id: 1,
+      title: "CURRENT MISSION",
+      subtitle: "Expedition 73",
+      icon: <></>,
+    },
+    {
+      id: 2,
+      title: "FUTURE MISSION",
+      subtitle: "Axiom Mission 4",
+      icon: <></>,
+    },
+    {
+      id: 3,
+      title: "MOBILE APP",
+      subtitle: "Spot the Station",
+      icon: <></>,
+    },
+  ];
+
   return (
     <div className="relative items-center justify-items-center min-h-screen pb-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col w-full">
@@ -33,7 +60,9 @@ export default function Home() {
               Space Station Updates
             </Button>
           </div>
+          <div className="absolute bottom-0">aaaaa</div>
         </div>
+        Part2
       </main>
     </div>
   );
