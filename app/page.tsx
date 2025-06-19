@@ -20,17 +20,17 @@ export default function Home() {
               />
             </video>
           </figure>
-          <div className="relative top-1/2 transform -translate-y-1/2 max-w-[800px] text-white">
+          <div className="relative p-8 md:pl-16 top-1/2 transform -translate-y-1/2 max-w-[800px] text-white">
             <h2 className="text-4xl md:text-6xl font-bold">
-              Helping American Communities
+              Your Orbiting Laboratory
             </h2>
             <p className="mt-4 max-w-xl">
-              With the Atlantic hurricane season underway, NASA is gearing up to
-              produce cutting-edge research that strengthens the nation’s
-              ability to prepare for and respond to severe weather.
+              Since the first crew’s arrival aboard over twenty years ago, the
+              International Space Station has evolved into a state-of-the-art
+              scientific lab.
             </p>
             <Button type="primary" danger className="mt-4">
-              Click!
+              Space Station Updates
             </Button>
           </div>
         </div>
