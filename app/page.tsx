@@ -12,7 +12,7 @@ export default function Home() {
             to prepare for and respond to severe weather.
           </p>
           <Button color="danger" variant="solid">
-            Click
+            Click!
           </Button>
         </div>
         <div className="bg-banner-home h-[500px] w-full bg-cover bg-center">
