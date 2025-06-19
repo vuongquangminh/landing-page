@@ -2,7 +2,7 @@ import { Button } from "antd";
 import { ReactNode } from "react";
 
 export default function Home() {
-  const itemBanner: {
+  const referenceBanner: {
     id: number;
     title: string;
     subtitle: string;
@@ -60,7 +60,16 @@ export default function Home() {
               Space Station Updates
             </Button>
           </div>
-          <div className="absolute bottom-0">aaaaa</div>
+          <div className="absolute bottom-0 flex text-white">
+            {referenceBanner.map((item) => (
+              <div key={item.id} className="">
+                <div className="">{item.title}</div>
+                <div className="">
+                  {item.subtitle} {item.icon}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
         Part2
       </main>
