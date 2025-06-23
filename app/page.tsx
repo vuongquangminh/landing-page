@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { Button, Col, Row } from "antd";
 import { MoveUpRight } from "lucide-react";
 import Image from "next/image";
@@ -189,7 +190,7 @@ export default function Home() {
           </Row>
           <div></div>
         </div>
-        <div className="container mx-auto">
+        <div className="container mx-auto mb-20">
           <div className="py-14 flex justify-between items-center font-bold">
             <h3 className="text-5xl ">Featured News</h3>
             <div className="flex">
@@ -282,7 +283,36 @@ export default function Home() {
             )}
           </Row>
         </div>
-        aaaaaa
+        <div className="relative w-full min-h-[600px] aspect-[2/0.7] ">
+          <img
+            loading="lazy"
+            decoding="async"
+            width="650"
+            height="650"
+            src="https://www.nasa.gov/wp-content/uploads/2025/06/sun-1.gif?w=650"
+            className="h-full w-full inset-0 object-cover absolute"
+            alt=""
+          />
+          <div className="relative p-8 md:pl-16 top-1/2 transform -translate-y-1/2 max-w-[800px] text-white">
+            <h2 className="text-4xl md:text-6xl font-bold">
+              Eruptions from Sun
+            </h2>
+            <p className="mt-8 max-w-xl">
+              On June 10, NASA’s PUNCH (Polarimeter to Unify the Corona and
+              Heliosphere) mission released its first images of large solar
+              eruptions, or coronal mass ejections. The mission’s highly
+              sensitive, wide-field instruments were able to capture the
+              eruptions as they evolved in space, in much greater detail than
+              previously possible.
+            </p>
+            <div className="flex items-center mt-8 text-xl font-bold">
+              Solar Observations{" "}
+              <div className="mx-2 bg-[#f64137] rounded-full p-1 ">
+                <MoveUpRight color="white" size={14} />
+              </div>
+            </div>
+          </div>
+        </div>
       </main>
     </div>
   );
