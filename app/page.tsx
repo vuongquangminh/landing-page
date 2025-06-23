@@ -6,7 +6,7 @@ import { ReactNode } from "react";
 type referenceBannerType = {
   id: number;
   title: string;
-  subtitle: string;
+  content: string;
   icon: ReactNode;
 };
 
@@ -14,7 +14,7 @@ type featuredNewType =
   | {
       id: number;
       title: string;
-      subtitle: string;
+      content: string;
       span: number;
       img: string;
     }
@@ -23,9 +23,16 @@ type featuredNewType =
       children: {
         id: number;
         title: string;
-        subtitle: string;
+        content: string;
         span: number;
         img: string;
+      }[];
+      gather: {
+        id: number;
+        avatar: string;
+        title: string;
+        content: string;
+        subTitle: string;
       }[];
     };
 
@@ -34,7 +41,7 @@ export default function Home() {
     {
       id: 1,
       title: "CURRENT MISSION",
-      subtitle: "Expedition 73",
+      content: "Expedition 73",
       icon: (
         <MoveUpRight color="white" size={14} strokeWidth={3} className="" />
       ),
@@ -42,13 +49,13 @@ export default function Home() {
     {
       id: 2,
       title: "FUTURE MISSION",
-      subtitle: "Axiom Mission 4",
+      content: "Axiom Mission 4",
       icon: <MoveUpRight color="white" size={14} />,
     },
     {
       id: 3,
       title: "MOBILE APP",
-      subtitle: "Spot the Station",
+      content: "Spot the Station",
       icon: <MoveUpRight color="white" size={14} />,
     },
   ];
@@ -58,17 +65,45 @@ export default function Home() {
       id: 1,
       title: "3 Min Read",
       img: "/images/feature-1.png",
-      subtitle:
+      content:
         "NASA Engineers Simulate Lunar Lighting for Artemis III Moon Landing",
       span: 12,
+      gather: [
+        {
+          id: 1,
+          avatar: "",
+          title: "5 Min Read",
+          content:
+            "NASA’s Roman to Peer Into Cosmic ‘Lenses’ to Better Define Dark Matter",
+          subTitle: "Article",
+        },
+        {
+          id: 2,
+          avatar: "",
+          title: "4 Min Read",
+          content:
+            "NASA+ Documentary “Cosmic Dawn” Reveals Untold Story of James Webb Space Telescope ",
+          subTitle: "Article",
+        },
+      ],
     },
     {
       id: 2,
       title: "1 Min Read",
       img: "/images/feature-2.webp",
-      subtitle:
+      content:
         "NASA Shares New Space Station Ops, Axiom Mission 4 Launch Update",
       span: 6,
+      gather: [
+        {
+          id: 1,
+          avatar: "",
+          title: "5 Min Read",
+          content:
+            "NASA’s Webb ‘UNCOVERs’ Galaxy Population Driving Cosmic Renovation",
+          subTitle: "Article",
+        },
+      ],
     },
     {
       id: 3,
@@ -77,7 +112,7 @@ export default function Home() {
           id: 1,
           title: "3 Min Read",
           img: "/images/feature-3.webp",
-          subtitle:
+          content:
             "NASA Engineers Simulate Lunar Lighting for Artemis III Moon Landing",
           span: 6,
         },
@@ -85,9 +120,18 @@ export default function Home() {
           id: 2,
           title: "3 Min Read",
           img: "/images/feature-4.jpg",
-          subtitle:
+          content:
             "NASA Engineers Simulate Lunar Lighting for Artemis III Moon Landing",
           span: 6,
+        },
+      ],
+      gather: [
+        {
+          id: 1,
+          avatar: "",
+          title: "6 Min Read",
+          content: "What’s Up: June 2025 Skywatching Tips from NASA",
+          subTitle: "Article",
         },
       ],
     },
@@ -134,7 +178,7 @@ export default function Home() {
                     {item.title}
                   </div>
                   <div className="text-lg font-bold flex items-center">
-                    {item.subtitle}{" "}
+                    {item.content}{" "}
                     <span className="mx-2 bg-[#f64137] rounded-full p-1 text-base">
                       {item.icon}
                     </span>
@@ -155,54 +199,57 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <Row gutter={16}>
+          <Row gutter={16} className="">
             {featuredNew.map((item) => {
               if ("children" in item) {
-                item.children.map((child) => {
-                  return (
-                    <Col
-                      key={child.id}
-                      span={child.span}
-                      className="relative overflow-hidden"
-                    >
-                      <div className="absolute bottom-0 p-6 text-white">
-                        <div className="tracking-[3px] uppercase">
-                          {child.title}
+                return (
+                  <Col key={item.id} className=" overflow-hidden ">
+                    <div className="flex flex-col h-full gap-4">
+                      {item.children.map((child) => (
+                        <div key={child.id} className="relative flex-1">
+                          <div className="absolute bottom-0 text-white p-4">
+                            <div className="tracking-[3px] uppercase">
+                              {child.title}
+                            </div>
+                            <div className="text-lg font-bold">
+                              {child.content}
+                            </div>
+                          </div>
+                          <Image
+                            src={child.img}
+                            alt="feature new"
+                            width={300}
+                            height={300}
+                            className="h-full object-cover"
+                          />
                         </div>
-                        <div className="text-xl font-bold">
-                          {child.subtitle}
-                        </div>
-                      </div>
-                      <Image
-                        src={child.img}
-                        alt="feature new"
-                        width={800}
-                        height={800}
-                        className="object-cover"
-                      />
-                    </Col>
-                  );
-                });
+                      ))}
+                    </div>
+                  </Col>
+                );
               } else {
                 return (
                   <Col
                     key={item.id}
                     span={item.span}
-                    className="relative overflow-hidden"
+                    className="relative overflow-hidden "
                   >
-                    <div className="absolute bottom-0 p-6 text-white">
-                      <div className="tracking-[3px] uppercase">
-                        {item.title}
+                    <div className="">
+                      <div className="absolute bottom-0 text-white p-6">
+                        <div className="tracking-[3px] uppercase">
+                          {item.title}
+                        </div>
+                        <div className="text-xl font-bold">{item.content}</div>
                       </div>
-                      <div className="text-xl font-bold">{item.subtitle}</div>
+                      <Image
+                        src={item.img}
+                        alt="feature new"
+                        width={800}
+                        height={800}
+                        className="h-full object-cover"
+                      />
                     </div>
-                    <Image
-                      src={item.img}
-                      alt="feature new"
-                      width={800}
-                      height={800}
-                      className="h-full object-cover"
-                    />
+                    
                   </Col>
                 );
               }
