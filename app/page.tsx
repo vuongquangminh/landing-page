@@ -302,7 +302,7 @@ export default function Home() {
               Heliosphere) mission released its first images of large solar
               eruptions, or coronal mass ejections. The mission’s highly
               sensitive, wide-field instruments were able to capture the
-              eruptions as they evolved in space, in much greater detail than
+              eruptions as they evolved in space, in much greater detail than 
               previously possible.
             </p>
             <div className="flex items-center mt-8 text-xl font-bold">
