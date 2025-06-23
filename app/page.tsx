@@ -71,7 +71,7 @@ export default function Home() {
       gather: [
         {
           id: 1,
-          avatar: "",
+          avatar: "/images/avatar-feature-new.png",
           title: "5 Min Read",
           content:
             "NASA’s Roman to Peer Into Cosmic ‘Lenses’ to Better Define Dark Matter",
@@ -79,7 +79,7 @@ export default function Home() {
         },
         {
           id: 2,
-          avatar: "",
+          avatar: "/images/avatar-feature-new-2.png",
           title: "4 Min Read",
           content:
             "NASA+ Documentary “Cosmic Dawn” Reveals Untold Story of James Webb Space Telescope ",
@@ -97,7 +97,7 @@ export default function Home() {
       gather: [
         {
           id: 1,
-          avatar: "",
+          avatar: "/images/avatar-feature-new-3.png",
           title: "5 Min Read",
           content:
             "NASA’s Webb ‘UNCOVERs’ Galaxy Population Driving Cosmic Renovation",
@@ -128,7 +128,7 @@ export default function Home() {
       gather: [
         {
           id: 1,
-          avatar: "",
+          avatar: "/images/avatar-feature-new-4.png",
           title: "6 Min Read",
           content: "What’s Up: June 2025 Skywatching Tips from NASA",
           subTitle: "Article",
@@ -234,26 +234,52 @@ export default function Home() {
                     span={item.span}
                     className="relative overflow-hidden "
                   >
-                    <div className="">
-                      <div className="absolute bottom-0 text-white p-6">
-                        <div className="tracking-[3px] uppercase">
-                          {item.title}
-                        </div>
-                        <div className="text-xl font-bold">{item.content}</div>
+                    <div className="absolute bottom-0 text-white p-6">
+                      <div className="tracking-[3px] uppercase">
+                        {item.title}
                       </div>
-                      <Image
-                        src={item.img}
-                        alt="feature new"
-                        width={800}
-                        height={800}
-                        className="h-full object-cover"
-                      />
+                      <div className="text-xl font-bold">{item.content}</div>
                     </div>
-                    
+                    <Image
+                      src={item.img}
+                      alt="feature new"
+                      width={800}
+                      height={800}
+                      className="h-full object-cover"
+                    />
                   </Col>
                 );
               }
             })}
+          </Row>
+          <Row gutter={16} className="">
+            {featuredNew.map(
+              (item) =>
+                "gather" in item &&
+                item.gather.map((gatherItem) => (
+                  <Col
+                    key={gatherItem.id}
+                    span={6}
+                    className="pt-4 !flex !items-center"
+                  >
+                    <Image
+                      src={gatherItem.avatar}
+                      alt="feature new"
+                      width={80}
+                      height={80}
+                      className="rounded-full"
+                    />
+                    <div className="px-5 text-black">
+                      <div className="tracking-[3px] uppercase">
+                        {gatherItem.title}
+                      </div>
+                      <div className="text-base font-bold">
+                        {gatherItem.content}
+                      </div>
+                    </div>
+                  </Col>
+                ))
+            )}
           </Row>
         </div>
         aaaaaa
