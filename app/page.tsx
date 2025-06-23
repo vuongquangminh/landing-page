@@ -290,7 +290,7 @@ export default function Home() {
             width="650"
             height="650"
             src="https://www.nasa.gov/wp-content/uploads/2025/06/sun-1.gif?w=650"
-            className="h-full w-full inset-0 object-cover absolute "
+            className="h-full w-full inset-0 object-cover absolute"
             alt=""
           />
           <div className="relative p-8 md:pl-16 top-1/2 transform -translate-y-1/2 max-w-[800px] text-white">
