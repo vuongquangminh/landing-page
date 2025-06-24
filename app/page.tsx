@@ -2,8 +2,9 @@ import { Button, Col, Row } from "antd";
 import { MoveUpRight } from "lucide-react";
 import { ReactNode } from "react";
 import TextInBanner from "./components/TextInBanner";
-import Chapter2 from "./components/FeaturedNews";
-import Chapter4 from "./components/SolarSystemExploration";
+import FeaturedNews from "./components/FeaturedNews";
+import SolarSystemExploration from "./components/SolarSystemExploration";
+import ImageOfTheDay from "./components/ImageOfTheDay";
 
 type referenceBannerType = {
   id: number;
@@ -88,7 +89,7 @@ export default function Home() {
           </Row>
           <div></div>
         </div>
-        <Chapter2 />
+        <FeaturedNews />
 
         <TextInBanner
           title="Eruptions from Sun"
@@ -105,7 +106,8 @@ export default function Home() {
             </div>
           }
         />
-        <Chapter4 />
+        <SolarSystemExploration />
+        <ImageOfTheDay />
       </main>
     </div>
   );
