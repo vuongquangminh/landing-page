@@ -16,7 +16,7 @@ export default function CardImgText({
   img: string;
 }) {
   return (
-    <Col key={key} span={span} className="relative overflow-hidden ">
+    <Col key={key || Math.random()} span={span} className="relative overflow-hidden ">
       <div className="absolute bottom-0 text-white p-6">
         <div className="tracking-[3px] uppercase">{title}</div>
         <div className="text-xl font-bold">{content}</div>

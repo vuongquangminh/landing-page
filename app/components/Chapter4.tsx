@@ -46,7 +46,7 @@ export default function Chapter4() {
           </div>
         </div>
       </div>
-      <Row gutter={16}>
+      <Row gutter={32} className="h-[450px]">
         {dataChap4.map((item) => {
           return (
             <Col key={item.id} className="relative flex-1 ">
@@ -61,8 +61,8 @@ export default function Chapter4() {
               <Image
                 src={item.image}
                 alt="feature new"
-                width={300}
-                height={300}
+                width={800}
+                height={800}
                 className="h-full w-full object-cover backdrop-brightness-90 "
               />
             </Col>
