@@ -49,10 +49,12 @@ export default function Chapter4() {
       <Row gutter={16}>
         {dataChap4.map((item) => {
           return (
-            <Col key={item.id} className="relative flex-1">
-              <div className="absolute bottom-0 text-white p-4 flex">
-                <div className="tracking-[3px] uppercase">{item.title}</div>
-                <div className=" inline-block mx-2 bg-[#f64137] rounded-full p-1 text-base">
+            <Col key={item.id} className="relative flex-1 ">
+              <div className="absolute bottom-0 z-[1] w-full text-white flex items-center bg-gradient-to-t from-black/70 to-transparent">
+                <div className="tracking-[3px]  uppercase p-6 font-bold">
+                  {item.title}
+                </div>
+                <div className=" mx-2 bg-[#f64137] rounded-full p-1 text-base">
                   {item.icon}
                 </div>
               </div>
@@ -61,7 +63,7 @@ export default function Chapter4() {
                 alt="feature new"
                 width={300}
                 height={300}
-                className="h-full object-cover"
+                className="h-full w-full object-cover backdrop-brightness-90 "
               />
             </Col>
           );
