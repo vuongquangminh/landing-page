@@ -28,7 +28,7 @@ type featuredNewType =
         subTitle: string;
       }[];
     };
-export default function Chapter2() {
+export default function FeaturedNews() {
   const featuredNew: featuredNewType[] = [
     {
       id: 1,

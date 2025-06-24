@@ -2,8 +2,8 @@ import { Button, Col, Row } from "antd";
 import { MoveUpRight } from "lucide-react";
 import { ReactNode } from "react";
 import TextInBanner from "./components/TextInBanner";
-import Chapter2 from "./components/Chapter2";
-import Chapter4 from "./components/Chapter4";
+import Chapter2 from "./components/FeaturedNews";
+import Chapter4 from "./components/SolarSystemExploration";
 
 type referenceBannerType = {
   id: number;

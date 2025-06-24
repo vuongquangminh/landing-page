@@ -3,7 +3,7 @@ import { MoveRight, MoveUpRight } from "lucide-react";
 import Image from "next/image";
 import React, { ReactNode } from "react";
 
-export default function Chapter4() {
+export default function SolarSystemExploration() {
   const dataChap4: {
     id: number;
     title: string;
