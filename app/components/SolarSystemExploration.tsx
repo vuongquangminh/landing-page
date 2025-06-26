@@ -39,18 +39,24 @@ export default function SolarSystemExploration() {
     <div className="container mx-auto py-20">
       <div className="pb-14 flex justify-between items-center font-bold">
         <h3 className="text-5xl font-fantasy">Solar System Exploration</h3>
-        <div className="flex">
+        <div className="flex items-center">
           <p>Discover More </p>
           <div className=" inline-block mx-2 bg-[#f64137] rounded-full p-1 text-base">
             <MoveUpRight color="white" size={14} />
           </div>
         </div>
       </div>
-      <Row gutter={32} className="h-[450px]">
+      <Row gutter={16}>
         {dataChap4.map((item) => {
           return (
-            <Col key={item.id} className="relative flex-1 ">
-              <div className="absolute bottom-0 z-[1] w-full text-white flex items-center bg-gradient-to-t from-black/70 to-transparent">
+            <Col
+              sm={24}
+              md={12}
+              lg={6}
+              key={item.id}
+              className="relative flex-1 mb-4"
+            >
+              <div className="absolute bottom-0 z-[1] text-white flex items-center ">
                 <div className="tracking-[3px]  uppercase p-6 font-bold">
                   {item.title}
                 </div>
@@ -63,7 +69,7 @@ export default function SolarSystemExploration() {
                 alt="feature new"
                 width={800}
                 height={800}
-                className="h-full w-full object-cover backdrop-brightness-90 "
+                className="h-full min-h-96 object-cover backdrop-brightness-90 "
               />
             </Col>
           );
