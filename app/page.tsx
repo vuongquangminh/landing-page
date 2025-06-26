@@ -7,6 +7,7 @@ import TextInBanner from "./components/TextInBanner";
 import FeaturedNews from "./components/FeaturedNews";
 import SolarSystemExploration from "./components/SolarSystemExploration";
 import ImageOfTheDay from "./components/ImageOfTheDay";
+import MoreNASAImages from "./components/MoreNASAImages";
 
 type referenceBannerType = {
   id: number;
@@ -62,7 +63,7 @@ export default async function Home() {
             />
           </video>
           <div className="relative p-8 md:pl-16 top-1/2 transform -translate-y-1/2 max-w-[800px] text-white">
-            <h2 className="text-4xl md:text-6xl font-bold">
+            <h2 className="text-4xl md:text-6xl font-bold font-fantasy">
               Your Orbiting Laboratory
             </h2>
             <p className="mt-4 max-w-xl">
@@ -116,6 +117,7 @@ export default async function Home() {
         />
         <SolarSystemExploration />
         <ImageOfTheDay />
+        <MoreNASAImages />
       </main>
     </div>
   );

@@ -24,8 +24,8 @@ export default function TextInBanner({
         alt=""
       />
       <div className="relative p-8 md:pl-16 top-1/2 transform -translate-y-1/2 max-w-[800px] text-white">
-        <h2 className="text-4xl md:text-6xl font-bold">{title}</h2>
-        <p className="mt-8 max-w-xl">{subTitle}</p>
+        <h2 className="text-4xl md:text-6xl font-bold font-fantasy">{title}</h2>
+        <div className="mt-8 max-w-xl ">{subTitle}</div>
         <div className="flex items-center mt-8 text-xl font-bold">
           {button}
           {icon}
