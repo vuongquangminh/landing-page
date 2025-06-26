@@ -1,6 +1,8 @@
+
 import { Button, Col, Row } from "antd";
 import { MoveUpRight } from "lucide-react";
 import { ReactNode } from "react";
+import type { Metadata } from "next";
 import TextInBanner from "./components/TextInBanner";
 import FeaturedNews from "./components/FeaturedNews";
 import SolarSystemExploration from "./components/SolarSystemExploration";
@@ -13,7 +15,12 @@ type referenceBannerType = {
   icon: ReactNode;
 };
 
-export default function Home() {
+export const metadata: Metadata = {
+  title: "...",
+  description: "...",
+};
+
+export default async function Home() {
   const referenceBanner: referenceBannerType[] = [
     {
       id: 1,
@@ -36,7 +43,7 @@ export default function Home() {
       icon: <MoveUpRight color="white" size={14} />,
     },
   ];
-
+  await new Promise((res) => setTimeout(res, 3000));
   return (
     <div className="relative items-center justify-items-center font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col  w-full">
@@ -89,6 +96,7 @@ export default function Home() {
           </Row>
           <div></div>
         </div>
+
         <FeaturedNews />
 
         <TextInBanner
