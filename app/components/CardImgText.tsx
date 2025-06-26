@@ -25,7 +25,7 @@ export default function CardImgText({
     <Col
       md={span * 2}
       lg={span}
-      className=" overflow-hidden p-2 !flex flex-col"
+      className=" overflow-hidden p-2 pb-6 !flex flex-col"
     >
       <Row className="grow relative">
         <div className="absolute bottom-0 text-white p-6">
