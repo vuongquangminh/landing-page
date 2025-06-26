@@ -85,14 +85,14 @@ export default function FeaturedNews() {
     <div className="container mx-auto mb-20">
       <div className="py-14 flex justify-between items-center font-bold">
         <h3 className="text-5xl font-fantasy">Featured News</h3>
-        <div className="flex">
+        <div className="flex items-center">
           <p>Recently Published</p>
           <div className=" inline-block mx-2 bg-[#f64137] rounded-full p-1 text-base">
             <MoveUpRight color="white" size={14} />
           </div>
         </div>
       </div>
-      <Row >
+      <Row>
         {featuredNew.map((item) => {
           return (
             <CardImgText
