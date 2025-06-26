@@ -1,4 +1,3 @@
-
 import { Button, Col, Row } from "antd";
 import { MoveUpRight } from "lucide-react";
 import { ReactNode } from "react";
@@ -101,6 +100,7 @@ export default async function Home() {
         <FeaturedNews />
 
         <TextInBanner
+          img="/images/sun-1.webp"
           title="Eruptions from Sun"
           subTitle={`On June 10, NASA’s PUNCH (Polarimeter to Unify the Corona and
               Heliosphere) mission released its first images of large solar
@@ -116,8 +116,48 @@ export default async function Home() {
           }
         />
         <SolarSystemExploration />
-        <ImageOfTheDay />
+        <ImageOfTheDay
+          badge="Today"
+          title="Image Of The Day"
+          subTitle="“Cosmic Dawn” Screening at Greenbelt Cinema"
+          src="/images/imageoftheday.webp"
+          content="Attendees line up to enter the theater for a screening of the
+                new NASA+ documentary “Cosmic Dawn: The Untold Story of the
+                James Webb Space Telescope,” Wednesday, June 11, 2025, at the
+                Greenbelt Cinema in Greenbelt, Maryland. Featuring
+                never-before-seen footage, Cosmic Dawn offers an unprecedented
+                glimpse into the assembly, testing, and launch of NASA’s James
+                Webb Space Telescope."
+          textButton="Browse Image Archive"
+          urlButton="https://www.nasa.gov/image-of-the-day/"
+          spanColLeft={9}
+          spanColRight={15}
+        />
         <MoreNASAImages />
+        <TextInBanner
+          img="/images/star-sky.webp"
+          title="Explore the Universe from your Inbox"
+          subTitle={`Stay up-to-date on the latest news from NASA–from Earth to the Moon, the Solar System and beyond. \nWe will never share your email address.`}
+          button="Sign Up"
+          icon={
+            <div className="mx-2 bg-[#f64137] rounded-full p-1 ">
+              <MoveUpRight color="white" size={14} />
+            </div>
+          }
+        />
+        <div className="bg-[#f6f6f6]">
+          <ImageOfTheDay
+            badge="Earth Information Center"
+            title="Explore our changing planet"
+            content="For more than 50 years, NASA satellites have provided data on Earth’s land, water, air, temperature, and climate. NASA’s Earth Information Center allows visitors to see how our planet is changing in six key areas: sea level rise and coastal impacts, health and air quality, wildfires, greenhouse gases, sustainable energy, and agriculture."
+            src="/images/storm.webp"
+            subSrc="Several weeks into the 2025 eastern Pacific hurricane season, a pair of tropical cyclones churned off the western coast of Mexico. The storms—Barbara and Cosme—are visible in this image, acquired on the afternoon of June 9, 2025, by the Visible Infrared Imaging Radiometer Suite on the NOAA-20 satellite."
+            textButton="Earth Science"
+            urlButton="/#"
+            spanColLeft={15}
+            spanColRight={9}
+          />
+        </div>
       </main>
     </div>
   );

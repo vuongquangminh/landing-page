@@ -5,7 +5,29 @@ import { MoveUpRight } from "lucide-react";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
-export default function ImageOfTheDay() {
+export default function ImageOfTheDay({
+  badge,
+  title,
+  subTitle,
+  content,
+  src,
+  subSrc,
+  textButton,
+  urlButton,
+  spanColLeft,
+  spanColRight,
+}: {
+  badge?: string;
+  title: string;
+  subTitle?: string;
+  content: string;
+  src: string;
+  subSrc?: string;
+  textButton?: string;
+  urlButton?: string;
+  spanColLeft: number;
+  spanColRight: number;
+}) {
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
     const checkWidth = () => setIsMobile(window.innerWidth <= 650);
@@ -16,21 +38,19 @@ export default function ImageOfTheDay() {
     return () => window.removeEventListener("resize", checkWidth);
   }, []);
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto py-20">
       <Row gutter={32} className="px-16 md:px-0">
-        <Col span={24} md={9} className="px-20">
+        <Col span={24} md={spanColLeft ?? 12} className="px-20">
           <div className="md:pr-30">
             <div className="">
-              <p className="uppercase tracking-[3px] text-sm">Today</p>
-              <h2 className="text-5xl font-bold font-fantasy">
-                Image Of The Day
-              </h2>
+              <p className="uppercase tracking-[3px] text-sm">{badge ?? ""}</p>
+              <h2 className="text-5xl font-bold font-fantasy">{title}</h2>
             </div>
             <div className="my-6 md:my-24">
               {isMobile && (
-                <div className="bg-[#f6f6f6] flex justify-center">
+                <div className="bg-[#f6f6f6] flex justify-center items-center">
                   <Image
-                    src="/images/imageoftheday.webp"
+                    src={src}
                     alt="feature new"
                     width={400}
                     height={400}
@@ -38,40 +58,39 @@ export default function ImageOfTheDay() {
                   />
                 </div>
               )}
-              <h3 className="text-xl font-medium">
-                “Cosmic Dawn” Screening at Greenbelt Cinema
-              </h3>
-              <p className="text-base my-6 italic">
-                Attendees line up to enter the theater for a screening of the
-                new NASA+ documentary “Cosmic Dawn: The Untold Story of the
-                James Webb Space Telescope,” Wednesday, June 11, 2025, at the
-                Greenbelt Cinema in Greenbelt, Maryland. Featuring
-                never-before-seen footage, Cosmic Dawn offers an unprecedented
-                glimpse into the assembly, testing, and launch of NASA’s James
-                Webb Space Telescope.
-              </p>
+              <h3 className="text-xl font-medium">{subTitle ?? ""}</h3>
+              <p className="text-base my-6 italic">{content}</p>
               <a
-                href="https://www.nasa.gov/image-of-the-day/"
+                href={urlButton}
                 target="_self"
                 className="flex items-center text-xl font-medium"
               >
-                <span className="text-black">Browse Image Archive </span>
-                <div className=" inline-block mx-2 bg-[#f64137] rounded-full p-1 text-base">
-                  <MoveUpRight color="white" size={14} />
-                </div>
+                <span className="text-black">{textButton ?? ""}</span>
+                {textButton && (
+                  <div className=" inline-block mx-2 bg-[#f64137] rounded-full p-1 text-base">
+                    <MoveUpRight color="white" size={14} />
+                  </div>
+                )}
               </a>
             </div>
           </div>
         </Col>
         {!isMobile && (
-          <Col span={24} md={15} className="bg-[#f6f6f6] !flex justify-center ">
+          <Col
+            span={24}
+            md={spanColRight ?? 12}
+            className={`bg-[#f6f6f6] !flex justify-center items-center ${
+              subSrc && " flex-col"
+            }`}
+          >
             <Image
-              src="/images/imageoftheday.webp"
+              src={src}
               alt="feature new"
               width={400}
               height={400}
-              className="h-full object-cover"
+              className="max-h-[500px] w-full object-contain"
             />
+            <p className="py-6">{subSrc ?? ""}</p>
           </Col>
         )}
       </Row>

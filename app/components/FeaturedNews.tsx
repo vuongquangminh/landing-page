@@ -108,7 +108,7 @@ export default function FeaturedNews() {
   return (
     <div className="container mx-auto mb-20">
       <div className="py-14 flex justify-between items-center font-bold">
-        <h3 className="text-5xl ">Featured News</h3>
+        <h3 className="text-5xl font-fantasy">Featured News</h3>
         <div className="flex">
           <p>Recently Published</p>
           <div className=" inline-block mx-2 bg-[#f64137] rounded-full p-1 text-base">

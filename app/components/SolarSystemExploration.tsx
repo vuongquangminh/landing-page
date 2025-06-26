@@ -36,8 +36,8 @@ export default function SolarSystemExploration() {
     },
   ];
   return (
-    <div className="container mx-auto mb-20">
-      <div className="py-14 flex justify-between items-center font-bold">
+    <div className="container mx-auto py-20">
+      <div className="pb-14 flex justify-between items-center font-bold">
         <h3 className="text-5xl font-fantasy">Solar System Exploration</h3>
         <div className="flex">
           <p>Discover More </p>
