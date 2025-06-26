@@ -239,7 +239,7 @@ export default async function Home() {
           </div>
           <Row gutter={[16, 16]}>
             {listTopics.map((item) => (
-              <Col span={6} key={item.id} className="relative flex-1">
+              <Col span={24} sm={12} md={6} key={item.id} className="relative flex-1 h-96">
                 <div className="absolute bottom-0 text-white p-4">
                   <div className="tracking-[3px] uppercase">{item.title}</div>
                 </div>
