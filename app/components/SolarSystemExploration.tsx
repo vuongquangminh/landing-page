@@ -50,7 +50,7 @@ export default function SolarSystemExploration() {
         {dataChap4.map((item) => {
           return (
             <Col
-              sm={24}
+              xs={24}
               md={12}
               lg={6}
               key={item.id}
