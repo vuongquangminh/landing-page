@@ -233,13 +233,19 @@ export default async function Home() {
             spanColRight={9}
           />
         </div>
-        <div className="container mx-auto mb-20">
+        <div className="container mx-auto py-20">
           <div className="pb-14 flex justify-between items-center font-bold">
             <h3 className="text-5xl font-fantasy">More Topics from NASA</h3>
           </div>
           <Row gutter={[16, 16]}>
             {listTopics.map((item) => (
-              <Col span={24} sm={12} md={6} key={item.id} className="relative flex-1 h-96">
+              <Col
+                span={24}
+                sm={12}
+                md={6}
+                key={item.id}
+                className="relative flex-1 h-96"
+              >
                 <div className="absolute bottom-0 text-white p-4">
                   <div className="tracking-[3px] uppercase">{item.title}</div>
                 </div>
@@ -254,7 +260,6 @@ export default async function Home() {
             ))}
           </Row>
         </div>
-        
       </main>
     </div>
   );
