@@ -1,7 +1,14 @@
+"use client";
+
 import { Row } from "antd";
 import { MoveUpRight } from "lucide-react";
-import React from "react";
+import React, { useRef } from "react";
 import CardImgText from "./CardImgText";
+
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+gsap.registerPlugin(useGSAP);
+
 type featuredNewType = {
   id: number;
   title: string;
@@ -18,6 +25,30 @@ type featuredNewType = {
 };
 
 export default function FeaturedNews() {
+  const ref1 = useRef<HTMLDivElement>(null);
+
+  useGSAP(
+    () => {
+      // gsap code here...
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ref1.current,
+          start: "top 70%",
+          end: "center center",
+          scrub: 1,
+          // pin: true,
+          markers: true,
+        },
+      });
+      tl.to(".text", {
+        // y: "-=100",
+        opacity: 1,
+        scale: 3,
+      });
+    },
+    { scope: ref1 }
+  ); // <-- scope is for selector text (optional)
+
   const featuredNew: featuredNewType[] = [
     {
       id: 1,
@@ -82,9 +113,9 @@ export default function FeaturedNews() {
     },
   ];
   return (
-    <div className="container mx-auto mb-20">
+    <div ref={ref1} className="container mx-auto mb-20 box">
       <div className="py-14 flex justify-between items-center font-bold">
-        <h3 className="text-5xl font-fantasy">Featured News</h3>
+        <h3 className="text-5xl font-fantasy text">Featured News</h3>
         <div className="flex items-center">
           <p>Recently Published</p>
           <div className=" inline-block mx-2 bg-[#f64137] rounded-full p-1 text-base">

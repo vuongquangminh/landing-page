@@ -16,9 +16,19 @@ type referenceBannerType = {
   icon: ReactNode;
 };
 
+// TODO
+// export async function generateMetadata({ params }: { params: { slug: string } }) {
+//   const post = await getBlogPost(params.slug);
+
+//   return {
+//     title: post.title,
+//     description: post.summary,
+//   };
+// }
+
 export const metadata: Metadata = {
-  title: "...",
-  description: "...",
+  title: "Trang chủ",
+  description: "Đây là trang chủ của website",
 };
 
 export default async function Home() {
@@ -118,7 +128,7 @@ export default async function Home() {
       ),
     },
   ];
-  await new Promise((res) => setTimeout(res, 3000));
+  // await new Promise((res) => setTimeout(res, 3000));
   return (
     <div className="relative items-center justify-items-center font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col  w-full">
@@ -260,7 +270,6 @@ export default async function Home() {
             ))}
           </Row>
         </div>
-        
       </main>
     </div>
   );
