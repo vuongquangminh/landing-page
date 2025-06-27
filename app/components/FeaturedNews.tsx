@@ -41,9 +41,9 @@ export default function FeaturedNews() {
         },
       });
       tl.to(".text", {
-        // y: "-=100",
+        x: "-=100",
         opacity: 1,
-        scale: 3,
+        scale: 0.5,
       });
     },
     { scope: ref1 }
