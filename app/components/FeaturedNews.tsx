@@ -6,6 +6,7 @@ import React, { useRef } from "react";
 import CardImgText from "./CardImgText";
 
 import gsap from "gsap";
+import { ReactLenis } from "lenis/react";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger, useGSAP);
@@ -115,30 +116,32 @@ export default function FeaturedNews() {
     },
   ];
   return (
-    <div ref={ref1} className="container mx-auto mb-20">
-      <div className="py-14 flex justify-between items-center font-bold">
-        <h3 className="text-5xl font-fantasy text">Featured News</h3>
-        <div className="flex items-center">
-          <p>Recently Published</p>
-          <div className=" inline-block mx-2 bg-[#f64137] rounded-full p-1 text-base">
-            <MoveUpRight color="white" size={14} />
+    <ReactLenis root>
+      <div ref={ref1} className="container mx-auto mb-20">
+        <div className="py-14 flex justify-between items-center font-bold">
+          <h3 className="text-5xl font-fantasy text">Featured News</h3>
+          <div className="flex items-center">
+            <p>Recently Published</p>
+            <div className=" inline-block mx-2 bg-[#f64137] rounded-full p-1 text-base">
+              <MoveUpRight color="white" size={14} />
+            </div>
           </div>
         </div>
+        <Row>
+          {featuredNew.map((item) => {
+            return (
+              <CardImgText
+                key={item.id}
+                title={item.title}
+                content={item.content}
+                img={item.img}
+                span={item.span}
+                gather={item.gather}
+              />
+            );
+          })}
+        </Row>
       </div>
-      <Row>
-        {featuredNew.map((item) => {
-          return (
-            <CardImgText
-              key={item.id}
-              title={item.title}
-              content={item.content}
-              img={item.img}
-              span={item.span}
-              gather={item.gather}
-            />
-          );
-        })}
-      </Row>
-    </div>
+    </ReactLenis>
   );
 }
