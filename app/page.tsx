@@ -260,6 +260,7 @@ export default async function Home() {
             ))}
           </Row>
         </div>
+        
       </main>
     </div>
   );
