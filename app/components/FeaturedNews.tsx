@@ -7,7 +7,8 @@ import CardImgText from "./CardImgText";
 
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-gsap.registerPlugin(useGSAP);
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 type featuredNewType = {
   id: number;
@@ -33,17 +34,18 @@ export default function FeaturedNews() {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: ref1.current,
-          start: "top 70%",
+          start: "top 60%",
           end: "center center",
           scrub: 1,
           // pin: true,
           markers: true,
         },
       });
-      tl.to(".text", {
-        x: "-=100",
-        opacity: 1,
-        scale: 0.5,
+      tl.from(ref1.current, {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        ease: "power3.out",
       });
     },
     { scope: ref1 }
@@ -113,7 +115,7 @@ export default function FeaturedNews() {
     },
   ];
   return (
-    <div ref={ref1} className="container mx-auto mb-20 box">
+    <div ref={ref1} className="container mx-auto mb-20">
       <div className="py-14 flex justify-between items-center font-bold">
         <h3 className="text-5xl font-fantasy text">Featured News</h3>
         <div className="flex items-center">
