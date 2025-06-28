@@ -13,7 +13,6 @@ export default function MoreNASAImages() {
 
   useGSAP(
     () => {
-      // gsap code here...
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: ref1.current,
@@ -21,7 +20,7 @@ export default function MoreNASAImages() {
           end: "center center",
           scrub: 1,
           // pin: true,
-          markers: true,
+          markers: false,
         },
       });
       tl.from(ref1.current, {

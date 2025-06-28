@@ -14,7 +14,7 @@ export default function ThreeImageRow({
   subTitle: string;
 }) {
   return (
-    <Col span={12} md={8} className="!flex flex-col aaaaa">
+    <Col span={12} md={8} className={`!flex flex-col  `}>
       <Row gutter={8} className="grow">
         <Col span={15}>
           <Image
@@ -22,7 +22,7 @@ export default function ThreeImageRow({
             alt="more-nase-image-1"
             width={300}
             height={300}
-            className="h-full object-cover"
+            className="w-full object-cover"
           />
         </Col>
         <Col span={9} className="!flex flex-col gap-2 justify-between">

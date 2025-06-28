@@ -54,7 +54,7 @@ export default function SolarSystemExploration() {
           end: "center center",
           scrub: 1,
           // pin: true,
-          markers: true,
+          markers: false,
         },
       });
       tl.from(ref1.current, {
@@ -62,6 +62,18 @@ export default function SolarSystemExploration() {
         y: 50,
         duration: 1,
         ease: "power3.out",
+      });
+      gsap.utils.toArray(".card-feature").forEach((box) => {
+        tl.from(box as string, {
+          opacity: 0,
+          x: 50,
+          rotation: 10,
+          duration: 1,
+          stagger: {
+            each: 0.3, // mỗi box cách nhau 0.3s
+            ease: "power3.out",
+          },
+        });
       });
     },
     { scope: ref1 }
@@ -101,7 +113,7 @@ export default function SolarSystemExploration() {
                   alt="feature new"
                   width={800}
                   height={800}
-                  className="h-full min-h-96 object-cover backdrop-brightness-90 "
+                  className="h-full rounded-md min-h-96 object-cover backdrop-brightness-90 "
                 />
               </Col>
             );

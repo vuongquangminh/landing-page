@@ -45,7 +45,7 @@ export default function ImageOfTheDay({
           end: "center center",
           scrub: 1,
           // pin: true,
-          markers: true,
+          markers: false,
         },
       });
       tl.from(ref1.current, {

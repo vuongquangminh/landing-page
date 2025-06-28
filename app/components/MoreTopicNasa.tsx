@@ -22,7 +22,7 @@ export default function MoreTopicNasa() {
           end: "center 30%",
           scrub: 1,
           // pin: true,
-          markers: true,
+          markers: false,
         },
       });
 
@@ -138,7 +138,7 @@ export default function MoreTopicNasa() {
                 alt="feature new"
                 width={600}
                 height={600}
-                className="h-full object-cover"
+                className="h-full rounded-xl object-cover"
               />
             </Col>
           ))}

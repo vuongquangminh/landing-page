@@ -27,7 +27,7 @@ type referenceBannerType = {
 // }
 
 export const metadata: Metadata = {
-  title: "Trang chủ",
+  title: "NASA",
   description: "Đây là trang chủ của website",
 };
 
