@@ -1,3 +1,4 @@
+import PhoneInput from "@/components/PhoneInput";
 import Image from "next/image";
 import React from "react";
 
@@ -83,6 +84,7 @@ export const FooterApp = () => {
               </ul>
             </div>
           </div>
+          <PhoneInput />
         </div>
         <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
         <div className="sm:flex sm:items-center sm:justify-between">
