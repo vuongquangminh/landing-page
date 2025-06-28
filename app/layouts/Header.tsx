@@ -1,3 +1,5 @@
+"use client";
+import "flowbite";
 import Image from "next/image";
 import React from "react";
 
@@ -10,14 +12,15 @@ export const HeaderApp = () => {
           className="flex items-center space-x-3 rtl:space-x-reverse"
         >
           <Image
-            src="https://flowbite.com/docs/images/logo.svg"
+            src="/images/nasa-logo.svg"
             className="h-8"
             alt="Flowbite Logo"
-            width={80}
-            height={80}
+            width={64}
+            height={64}
           />
+
           <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-            Flowbite
+            Nasa
           </span>
         </a>
         <div className="flex items-center md:order-2 space-x-1 md:space-x-2 rtl:space-x-reverse">
@@ -50,8 +53,8 @@ export const HeaderApp = () => {
             >
               <path
                 stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 stroke-width="2"
                 d="M1 1h15M1 7h15M1 13h15"
               />
@@ -88,8 +91,8 @@ export const HeaderApp = () => {
                 >
                   <path
                     stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                     stroke-width="2"
                     d="m1 1 4 4 4-4"
                   />
