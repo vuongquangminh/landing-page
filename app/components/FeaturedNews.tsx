@@ -1,7 +1,16 @@
+"use client";
+
 import { Row } from "antd";
 import { MoveUpRight } from "lucide-react";
-import React from "react";
+import React, { useRef } from "react";
 import CardImgText from "./CardImgText";
+
+import gsap from "gsap";
+import { ReactLenis } from "lenis/react";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger, useGSAP);
+
 type featuredNewType = {
   id: number;
   title: string;
@@ -18,6 +27,31 @@ type featuredNewType = {
 };
 
 export default function FeaturedNews() {
+  const ref1 = useRef<HTMLDivElement>(null);
+
+  useGSAP(
+    () => {
+      // gsap code here...
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ref1.current,
+          start: "top 90%",
+          end: "center center",
+          scrub: 1,
+          // pin: true,
+          markers: true,
+        },
+      });
+      tl.from(ref1.current, {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        ease: "power3.out",
+      });
+    },
+    { scope: ref1 }
+  ); // <-- scope is for selector text (optional)
+
   const featuredNew: featuredNewType[] = [
     {
       id: 1,
@@ -82,30 +116,32 @@ export default function FeaturedNews() {
     },
   ];
   return (
-    <div className="container mx-auto mb-20">
-      <div className="py-14 flex justify-between items-center font-bold">
-        <h3 className="text-5xl font-fantasy">Featured News</h3>
-        <div className="flex items-center">
-          <p>Recently Published</p>
-          <div className=" inline-block mx-2 bg-[#f64137] rounded-full p-1 text-base">
-            <MoveUpRight color="white" size={14} />
+    <ReactLenis root>
+      <div ref={ref1} className="container mx-auto mb-20">
+        <div className="py-14 flex justify-between items-center font-bold">
+          <h3 className="text-5xl font-fantasy text">Featured News</h3>
+          <div className="flex items-center">
+            <p>Recently Published</p>
+            <div className=" inline-block mx-2 bg-[#f64137] rounded-full p-1 text-base">
+              <MoveUpRight color="white" size={14} />
+            </div>
           </div>
         </div>
+        <Row>
+          {featuredNew.map((item) => {
+            return (
+              <CardImgText
+                key={item.id}
+                title={item.title}
+                content={item.content}
+                img={item.img}
+                span={item.span}
+                gather={item.gather}
+              />
+            );
+          })}
+        </Row>
       </div>
-      <Row>
-        {featuredNew.map((item) => {
-          return (
-            <CardImgText
-              key={item.id}
-              title={item.title}
-              content={item.content}
-              img={item.img}
-              span={item.span}
-              gather={item.gather}
-            />
-          );
-        })}
-      </Row>
-    </div>
+    </ReactLenis>
   );
 }
