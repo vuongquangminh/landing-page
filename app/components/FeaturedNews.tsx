@@ -35,7 +35,7 @@ export default function FeaturedNews() {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: ref1.current,
-          start: "top 60%",
+          start: "top 90%",
           end: "center center",
           scrub: 1,
           // pin: true,
