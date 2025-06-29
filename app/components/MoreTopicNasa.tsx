@@ -27,7 +27,6 @@ export default function MoreTopicNasa() {
       });
 
       gsap.utils.toArray(".box").forEach((box) => {
-        console.log("box: ", box);
         tl.from(box as string, {
           opacity: 0,
           y: 50,

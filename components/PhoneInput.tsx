@@ -5,10 +5,20 @@ import React, { useState } from "react";
 
 export default function PhoneInput() {
   const [phone, setPhone] = useState("");
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault(); // Ngăn reload trang
-    console.log("Giá trị số điện thoại:", phone); // Hoặc xử lý theo ý bạn
-    alert(`Số điện thoại bạn nhập: ${phone}`);
+    try {
+      const res = await fetch("http://localhost:8080/api/support", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ phone }),
+      });
+      console.log("res: ", res);
+
+      if (!res.ok) throw new Error("Server error");
+    } catch (err) {
+      console.error(err);
+    }
   };
   return (
     <form onSubmit={handleSubmit} className="max-w-sm ">
