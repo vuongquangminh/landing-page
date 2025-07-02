@@ -14,7 +14,6 @@ export default function MoreTopicNasa() {
 
   useGSAP(
     () => {
-      // gsap code here...
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: ref1.current,
