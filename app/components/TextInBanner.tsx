@@ -1,6 +1,7 @@
 "use client";
 
 import React, { ReactNode, useRef } from "react";
+import Image from "next/image";
 import gsap from "gsap";
 import { ReactLenis } from "lenis/react";
 import { useGSAP } from "@gsap/react";
@@ -47,15 +48,15 @@ export default function TextInBanner({
   return (
     <ReactLenis root>
       <div ref={ref1} className="relative w-full min-h-[600px] aspect-[2/0.7]">
-        <img
-          loading="lazy"
-          decoding="async"
-          width="650"
-          height="650"
+        <Image
           src={img}
+          width={650}
+          height={650}
           className="h-full w-full inset-0 object-cover absolute"
           alt=""
+          priority={false}
         />
+
         <div className="relative p-8 md:pl-16 top-1/2 transform -translate-y-1/2 max-w-[800px] text-white">
           <h2 className="text-4xl md:text-6xl font-bold font-fantasy ">
             {title}

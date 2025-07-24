@@ -1,27 +1,9 @@
-"use client";
-
 import "flowbite";
-import React, { useState } from "react";
+import React from "react";
 
 export default function PhoneInput() {
-  const [phone, setPhone] = useState("");
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault(); // Ngăn reload trang
-    // try {
-    //   const res = await fetch("http://localhost:8080/api/support", {
-    //     method: "POST",
-    //     headers: { "Content-Type": "application/json" },
-    //     body: JSON.stringify({ phone }),
-    //   });
-    //   console.log("res: ", res);
-
-    //   if (!res.ok) throw new Error("Server error");
-    // } catch (err) {
-    //   console.error(err);
-    // }
-  };
   return (
-    <form onSubmit={handleSubmit} className="max-w-sm ">
+    <form className="max-w-sm ">
       <label
         htmlFor="phone-input"
         className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
@@ -43,7 +25,6 @@ export default function PhoneInput() {
         <input
           type="text"
           id="phone-input"
-          onChange={(e) => setPhone(e.target.value)}
           aria-describedby="helper-text-explanation"
           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           pattern="[0-9]{10}"

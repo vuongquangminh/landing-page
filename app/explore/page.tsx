@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import MoreNASAImages from "../components/MoreNASAImages";
 import TextInBanner from "../components/TextInBanner";
 import ImageOfTheDay from "../components/ImageOfTheDay";
+import Image from "next/image";
 
 type referenceBannerType = {
   id: number;
@@ -57,27 +58,13 @@ export default async function Explore() {
     <div className="relative items-center justify-items-center font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col  w-full">
         <div className="relative w-full min-h-[600px] aspect-[2/0.7] ">
-          {/* <video
-            className=" absolute inset-0 object-cover w-full h-full"
-            autoPlay
-            loop
-            muted
-            playsInline
-            id="html5_media_bu69gubpgij"
-          >
-            <source
-              src="https://www.nasa.gov/wp-content/uploads/2025/05/iss-intro.mp4"
-              type="video/mp4"
-            />
-          </video> */}
-          <img
-            loading="lazy"
-            decoding="async"
-            width="650"
-            height="650"
+          <Image
             src="/images/explore-1.webp"
+            width={650}
+            height={650}
             className="absolute inset-0 object-cover w-full h-full"
             alt=""
+            priority={false}
           />
           <div className="relative p-8 md:pl-16 top-1/2 transform -translate-y-1/2 max-w-[800px] text-white">
             <h2 className="text-4xl md:text-6xl font-bold font-fantasy">
